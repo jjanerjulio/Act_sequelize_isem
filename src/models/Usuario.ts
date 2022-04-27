@@ -40,6 +40,6 @@ Usuario.init(
     {
         tableName: 'usuarios',
         sequelize: database,
-        timestamps: true
+        timestamps: false
     }
 )
