@@ -6,6 +6,7 @@ export class Usuario extends Model {
     public correo!: string;
     public telefono!: string;
     public direccion!: string;
+    public activo!: Boolean;
 }
 
 export interface UsuarioI {
@@ -13,6 +14,7 @@ export interface UsuarioI {
     correo: string;
     telefono: string;
     direccion: string;
+    activo: Boolean;
 }
 
 Usuario.init(
@@ -34,6 +36,11 @@ Usuario.init(
 
         direccion: {
             type: DataTypes.STRING,
+            allowNull: false
+        },
+        activo:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
             allowNull: false
         }
     },
