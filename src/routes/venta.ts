@@ -7,7 +7,9 @@ export class VentaRoutes{
 
     public routes(app: Application): void{
         app.route("/ventas").get(this.ventaController.getAllVenta)
-
-
+        app.route("/venta/:id").get(this.ventaController.getOneVenta)
+        app.route("/ventas").post(this.ventaController.createVenta)
+        // app.route("/ventas").patch(this.ventaController.updateVenta)
+        //app.route("/ventas").delete(this.ventaController.deleteVenta)
     }
 }

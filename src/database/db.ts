@@ -2,9 +2,9 @@ const Sequelize = require('sequelize');
 
 const DB_NAME = 'db_ventavehiculos_node';
 
-const DB_USER = 'root';
+const DB_USER = 'janer';
 
-const DB_PASS = '52637585.Rosa';
+const DB_PASS = '52637585-Rosa';
 
 export const database = new Sequelize(
     DB_NAME,
@@ -19,7 +19,7 @@ export const database = new Sequelize(
 );
 
 
-database.sync({force: true})
+database.sync({force: false})
     .then(function () {
         console.log('Base de dato creada correctamente...');
     });

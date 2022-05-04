@@ -5,17 +5,17 @@ import { Usuario } from "./Usuario";
 
 export class Venta extends Model {
     public id!: number;
-    public fachaVenta!: Date;
+    public fechaVenta!: Date;
     public valorTotal!: number;
     public tipoPago!: string;
-    public usuarioId!: number;
+    public UsuarioId!: number;
 }
 
 export interface VentaI {
-    fachaVenta: Date;
+    fechaVenta: Date;
     valorTotal: number;
     tipoPago: string;
-    usuarioId: number;
+    UsuarioId: number;
 }
 
 Venta.init (

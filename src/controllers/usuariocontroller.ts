@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { where } from 'sequelize/types';
 import { Usuario, UsuarioI } from '../models/Usuario';
 
 export class UsuarioController {
@@ -12,16 +11,21 @@ export class UsuarioController {
         }
     }
 
-    // public async getOneUsuario(req: Request, res: Response){
-    //     const { id: idParam } = req.params 
-    //     try{
-    //         const user: UsuarioI | null = await Usuario.findOne(
-    //             where: { id: idParam}
-    //         )
-    //     } catch(error){
+    public async getOneUsuario(req: Request, res: Response){
+        const { id: idParam } = req.params 
+        try{
+            const user: UsuarioI | null = await Usuario.findOne(
+                {
+                    where: { id: idParam}
+                }
+            )
 
-    //     }
-    // }
+            res.status(200).json(user)
+        } catch(error){
+            res.status(500).json({msg: "Error internal"})
+        }
+    }
+
     public async createUsuario(req: Request, res: Response){
         const {
             nombre,
