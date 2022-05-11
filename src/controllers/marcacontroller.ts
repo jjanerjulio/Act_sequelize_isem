@@ -11,42 +11,36 @@ export class MarcaController{
         }
     }
 
-    /*public async getOneVenta(req: Request, res: Response){
+    public async getOneMarca(req: Request, res: Response){
         const { id: idParam } = req.params 
         try{
-            const venta: VentaI | null = await Venta.findOne(
+            const marca: MarcaI | null = await Marca.findOne(
                 {
                     where: { id: idParam}
                 }
             )
 
-            res.status(200).json(venta)
+            res.status(200).json(marca)
         } catch(error){
             res.status(500).json({msg: "Error internal"})
         }
     }
 
-    public async createVenta(req: Request, res: Response){
+    public async createMarca(req: Request, res: Response){
         const {
-            fechaVenta,
-            valorTotal,
-            tipoPago,
-            UsuarioId,
+            nombre,
         } = req.body;
         try{
             let body:any = {
-                fechaVenta,
-                valorTotal,
-                tipoPago,
-                UsuarioId
+                nombre
             }
 
-            const user = await Venta.create(body);
+            const user = await Marca.create(body);
             res.status(200).json({user})
         } catch(error){
 
         }
-    }*/
+    }
 
 
 }

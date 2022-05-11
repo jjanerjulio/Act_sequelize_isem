@@ -9,6 +9,7 @@ export class Venta extends Model {
     public valorTotal!: number;
     public tipoPago!: string;
     public UsuarioId!: number;
+    public activo!: Boolean;
 }
 
 export interface VentaI {
@@ -16,6 +17,7 @@ export interface VentaI {
     valorTotal: number;
     tipoPago: string;
     UsuarioId: number;
+    activo: Boolean;
 }
 
 Venta.init (
@@ -34,6 +36,11 @@ Venta.init (
             type: DataTypes.ENUM('efectivo', 'credito'),
             allowNull: false
         },
+        activo:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: true,
+            allowNull: false
+        }
     },
     {
         tableName: 'ventas',

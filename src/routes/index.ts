@@ -8,6 +8,6 @@ export class Routes {
     public usuarioRoutes: UsuarioRoutes = new UsuarioRoutes();
     public ventaRoutes: VentaRoutes = new VentaRoutes();
     public marcaRoutes: MarcaRoutes = new MarcaRoutes();
-    public tipoVehiculo: TipoVehiculoRoutes = new TipoVehiculoRoutes();
-    public vehiculo: VehiculoRoutes = new VehiculoRoutes();
+    public tipoVehiculoRoutes: TipoVehiculoRoutes = new TipoVehiculoRoutes();
+    public vehiculoRoutes: VehiculoRoutes = new VehiculoRoutes();
 }

@@ -20,7 +20,7 @@ TipoVehiculo.init(
         
     },
     {
-        tableName: 'tipoVehiculos',
+        tableName: 'tipovehiculos',
         sequelize: database,
         timestamps: true
     }

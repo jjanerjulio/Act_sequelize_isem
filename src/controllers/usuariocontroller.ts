@@ -39,16 +39,18 @@ export class UsuarioController {
             correo,
             telefono,
             direccion,
+            activo
         } = req.body;
         try{
-            let body:any = {
+            let body:UsuarioI = {
                 nombre,
                 correo,
                 telefono,
-                direccion
+                direccion,
+                activo
             }
 
-            const user = await Usuario.create(body);
+            const user = await Usuario.create({...body});
             res.status(200).json({user})
         } catch(error){
 
@@ -85,8 +87,8 @@ export class UsuarioController {
             // );
 
             if(!userExist) return res.status(500).json({msg:"El usuario no esiste"})
-            await Usuario.update
-                (body, {
+            await Usuario.update(
+                body, {
                     where: {id:pk}
                 }
             ); //select update from usuarios where id=pk

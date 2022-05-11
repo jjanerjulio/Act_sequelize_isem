@@ -9,9 +9,9 @@ export class UsuarioRoutes {
         app.route("/usuarios").get(this.usuarioController.getAllUsuario)
         app.route("/usuario/:id").get(this.usuarioController.getOneUsuario)
         app.route("/usuario").post(this.usuarioController.createUsuario)
-        app.route("/usuario:id").patch(this.usuarioController.updateUsuario)
+        app.route("/actusuario/:id").patch(this.usuarioController.updateUsuario)
         //app.route("/usuario:id").delete(this.usuarioController.deleteUsuario)
-        app.route("/delusuario:id").patch(this.usuarioController.deleteUsuario)
+        app.route("/delusuario/:id").patch(this.usuarioController.deleteUsuario)
 
     }
 }

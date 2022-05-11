@@ -9,7 +9,9 @@ export class VentaRoutes{
         app.route("/ventas").get(this.ventaController.getAllVenta)
         app.route("/venta/:id").get(this.ventaController.getOneVenta)
         app.route("/ventas").post(this.ventaController.createVenta)
-        // app.route("/ventas").patch(this.ventaController.updateVenta)
-        //app.route("/ventas").delete(this.ventaController.deleteVenta)
+        app.route("/actventa/:id").patch(this.ventaController.updateVenta)
+        //app.route("/usuario:id").delete(this.usuarioController.deleteUsuario)
+        app.route("/delventa/:id").patch(this.ventaController.deleteVenta)
+
     }
 }
